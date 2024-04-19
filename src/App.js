@@ -58,6 +58,13 @@ function App() {
       cargo: "Professor de Interfaces Web",
       imagem: "https://github.com/NathanLe1te.png",
     },
+    {
+      nome: "Sávio Pereira",
+      time: "Alunos",
+      cargo: "Aluno de Informática para Internet",
+      imagem:
+        "https://media.licdn.com/dms/image/D4D03AQE6xyMwttrQig/profile-displayphoto-shrink_200_200/0/1713053526320?e=1718841600&v=beta&t=Wg4HnskImqV_P2XZEpaip5jBdU5kVOkO9BWNhiKzjYg",
+    },
   ]);
 
   const aoNovoMembroAdicionado = (membro) => {

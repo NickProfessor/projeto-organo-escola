@@ -71,6 +71,10 @@ function App() {
     console.log(membro);
     setMembros([...membros, membro]);
   };
+
+  const deletandoColaborador = () => {
+    console.log("deletou");
+  };
   return (
     <div className="App">
       <Banner />
@@ -85,6 +89,7 @@ function App() {
           corPrimaria={time.corPrimaria}
           corSecundaria={time.corSecundaria}
           membros={membros.filter((membro) => membro.time === time.nome)}
+          aoDeletar={deletandoColaborador}
         />
       ))}
     </div>

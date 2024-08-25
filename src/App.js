@@ -4,33 +4,28 @@ import Formulario from "./componentes/Formulario";
 import Time from "./componentes/Time";
 
 function App() {
-  const times = [
+  const [times, setTimes] = useState([
     {
       nome: "Direção",
-      corPrimaria: "#c02828",
-      corSecundaria: "#f37777",
+      cor: "#f37777",
     },
     {
       nome: "Coordenação",
-      corPrimaria: "#c04428",
-      corSecundaria: "#F2A950",
+      cor: "#F2A950",
     },
     {
       nome: "Professores",
-      corPrimaria: "#d86ebf",
-      corSecundaria: "#ffb3e8",
+      cor: "#ffb3e8",
     },
     {
       nome: "Estagiários",
-      corPrimaria: "#57c278",
-      corSecundaria: "#93ffcd",
+      cor: "#93ffcd",
     },
     {
       nome: "Alunos",
-      corPrimaria: "#60c0f7",
-      corSecundaria: "#96dafa",
+      cor: "#96dafa",
     },
-  ];
+  ]);
 
   const [membros, setMembros] = useState([
     {
@@ -75,6 +70,15 @@ function App() {
   const deletandoColaborador = () => {
     console.log("deletou");
   };
+
+  const mudarCorTime = (cor, nomeDoTime) => {
+    setTimes(times.map(time => {
+      if(time.nome === nomeDoTime){
+        time.cor = cor;
+      }
+      return time;
+    }))
+  }
   return (
     <div className="App">
       <Banner />
@@ -86,10 +90,10 @@ function App() {
         <Time
           key={time.nome}
           nome={time.nome}
-          corPrimaria={time.corPrimaria}
-          corSecundaria={time.corSecundaria}
+          cor={time.cor}
           membros={membros.filter((membro) => membro.time === time.nome)}
           aoDeletar={deletandoColaborador}
+          mudarCor={mudarCorTime}
         />
       ))}
     </div>
